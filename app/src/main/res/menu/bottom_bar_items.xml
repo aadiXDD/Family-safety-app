@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/Home"
+        />
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title="@string/ic_dashboard"
+        />
+    <item
+        android:id="@+id/Guard"
+        android:icon="@drawable/ic_baseline_security_24"
+        android:title="@string/ic_guard"
+        />
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profile"
+        />
+
+</menu>

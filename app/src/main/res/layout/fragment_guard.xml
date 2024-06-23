@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg"
+    tools:context="com.example.famsaf.GuardFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pink_card"
+        app:cardBackgroundColor="#ed7079"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_pink_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/sos"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:elevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sos_desc"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:elevation="8dp"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="@id/pink_card"
+        app:layout_constraintTop_toBottomOf="@id/text_pink_card"
+        app:layout_constraintEnd_toStartOf="@id/sos_src"
+        android:text="@string/sos_text"
+        />
+
+    <ImageView
+        android:id="@+id/sos_src"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="32dp"
+        android:src="@drawable/ic_baseline_alarm_24"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/pink_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/green_card"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#6cd3c9"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/pink_card"/>
+
+    <TextView
+        android:id="@+id/text_green_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/guard"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:elevation="8dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/green_card"
+        app:layout_constraintTop_toTopOf="@id/green_card" />
+
+    <TextView
+        android:id="@+id/guard_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/guard_text"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:elevation="8dp"
+        app:layout_constraintStart_toStartOf="@id/green_card"
+        app:layout_constraintTop_toBottomOf="@id/text_green_card"
+        app:layout_constraintEnd_toStartOf="@id/guard_src" />
+
+    <ImageView
+        android:id="@+id/guard_src"
+        android:layout_width="100dp"
+        android:elevation="8dp"
+        android:layout_height="100dp"
+        android:layout_margin="32dp"
+        android:src="@drawable/secure"
+        app:layout_constraintBottom_toBottomOf="@id/green_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/green_card"
+        android:contentDescription="@string/todo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
