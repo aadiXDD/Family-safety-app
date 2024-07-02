@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="member_battery_list" type="id" />
+    <item name="member_battery_icon" type="id" />
+    <item name="member_battery_percent" type="id" />
+</resources>
