@@ -23,6 +23,7 @@ class ActivityMain : AppCompatActivity() {
                 R.id.home -> {
                     inflateFragment(HomeFragment.newInstance())
                 }
+                //
                 R.id.dashboard -> {
                     inflateFragment(DashFragment.newInstance())
                 }
