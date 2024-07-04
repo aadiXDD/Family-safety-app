@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class GuardFragment : Fragment() {
-
+class DashFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,10 +17,10 @@ class GuardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_guard, container, false)
+        return inflater.inflate(R.layout.fragment_dash, container, false)
     }
 
     companion object {
-        fun newInstance() = GuardFragment()
+        fun newInstance() = DashFragment()
     }
 }
