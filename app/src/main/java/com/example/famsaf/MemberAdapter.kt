@@ -1,18 +1,16 @@
 package com.example.famsaf
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tipcalculator.R
 
 class MemberAdapter(private val listMembers: List<MemberModel>) :
     RecyclerView.Adapter<MemberAdapter.ViewHolder>() {
 
-    class ViewHolder(private val item: View): RecyclerView.ViewHolder(item) {
+    class ViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val userImage = item.findViewById<ImageView>(R.id.img_user)
         var userName = item.findViewById<TextView>(R.id.member_title)
         var userTime = item.findViewById<TextView>(R.id.member_time)

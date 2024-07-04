@@ -3,7 +3,6 @@ package com.example.famsaf
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.tipcalculator.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityMain : AppCompatActivity() {
@@ -25,7 +24,7 @@ class ActivityMain : AppCompatActivity() {
                 }
                 //
                 R.id.dashboard -> {
-                    inflateFragment(DashFragment.newInstance())
+                    inflateFragment(MapsFragment())
                 }
                 else -> {
                     inflateFragment(ProfileFragment.newInstance())

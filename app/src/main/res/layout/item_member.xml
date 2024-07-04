@@ -87,32 +87,48 @@
         android:text="9th buildind, 2nd floor, maldiv road, manali 9th buildind, 2nd floor"
         android:textColor="@color/dark_grey"/>
 
-    <ImageView
-        android:id="@+id/member_battery_icon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/img_user"
-        android:elevation="8dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/img_user"
-        android:src="@drawable/battery_twotone_100_svgrepo_com"
-        app:tint="@color/teal_700" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/battery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:elevation="8dp"
-        android:layout_marginStart="2dp"
-        android:textColor="@color/dark_grey"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/member_battery_icon"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/img_user"
-        app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
-        app:layout_constraintStart_toEndOf="@id/member_battery_icon"
-        android:text="60%"
-        android:id="@+id/member_battery_percent"/>
+        app:layout_constraintStart_toStartOf="@+id/card_view"
+        app:layout_constraintEnd_toStartOf="@+id/member_title"
+        android:elevation="8dp"
+        android:background="@drawable/rounded_rectangle"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:id="@+id/member_battery_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/img_user"
+            android:elevation="8dp"
+            app:layout_constraintStart_toStartOf="@+id/img_user"
+            android:src="@drawable/battery_twotone_100_svgrepo_com"
+            app:tint="@color/teal_700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:elevation="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/member_battery_icon"
+            app:layout_constraintTop_toBottomOf="@+id/img_user"
+            app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
+            app:layout_constraintStart_toEndOf="@id/member_battery_icon"
+            android:text="60%"
+            android:id="@+id/member_battery_percent"/>
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/member_distance_icon"
@@ -122,8 +138,8 @@
         android:layout_marginTop="8dp"
         android:elevation="8dp"
         android:src="@drawable/ic_baseline_navigation_24"
-        app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
-        app:layout_constraintStart_toEndOf="@+id/member_battery_percent"
+        app:layout_constraintBottom_toBottomOf="@+id/battery"
+        app:layout_constraintStart_toEndOf="@+id/battery"
         app:layout_constraintTop_toBottomOf="@+id/img_user"
         app:tint="@color/purple_200" />
 
@@ -134,9 +150,9 @@
         android:elevation="8dp"
         android:textColor="@color/dark_grey"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/member_battery_icon"
+        app:layout_constraintTop_toTopOf="@id/battery"
         app:layout_constraintTop_toBottomOf="@+id/img_user"
-        app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/battery"
         app:layout_constraintStart_toEndOf="@id/member_distance_icon"
         android:text="250M"
         android:id="@+id/member_distance_text"/>
@@ -149,7 +165,7 @@
         android:layout_marginTop="8dp"
         android:elevation="8dp"
         android:src="@drawable/ic_baseline_wifi_24"
-        app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/battery"
         app:layout_constraintStart_toEndOf="@+id/member_distance_text"
         app:layout_constraintTop_toBottomOf="@+id/img_user"
         app:tint="@color/teal_700" />
@@ -162,22 +178,23 @@
         android:textColor="@color/dark_grey"
         android:textStyle="bold"
         android:layout_marginStart="2dp"
-        app:layout_constraintTop_toTopOf="@id/member_battery_icon"
+        app:layout_constraintTop_toTopOf="@id/battery"
         app:layout_constraintTop_toBottomOf="@+id/img_user"
-        app:layout_constraintBottom_toBottomOf="@+id/member_battery_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/battery"
         app:layout_constraintStart_toEndOf="@id/member_connection_icon"
         android:text="WiFi"
         android:id="@+id/member_connection"/>
 
     <ImageView
         android:id="@+id/call_icon"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:src="@drawable/ic_twotone_call_24"
         android:elevation="8dp"
+        android:background="@drawable/circle_shape"
         app:layout_constraintEnd_toEndOf="@+id/member_time"
         app:layout_constraintBottom_toBottomOf="@+id/member_connection"
         app:layout_constraintTop_toTopOf="@id/member_connection"
-        app:tint="@color/purple_200" />
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
