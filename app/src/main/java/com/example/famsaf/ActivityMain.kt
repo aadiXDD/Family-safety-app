@@ -1,15 +1,28 @@
 package com.example.famsaf
 
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityMain : AppCompatActivity() {
+
+    val permissions = arrayOf(
+        android.Manifest.permission.ACCESS_FINE_LOCATION,
+        android.Manifest.permission.ACCESS_COARSE_LOCATION
+    )
+    val permissionCode = 69
+
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        askForPermission()
 
         val bottomBar = findViewById<BottomNavigationView>(R.id.BottomBarMenu)
 
@@ -36,9 +49,40 @@ class ActivityMain : AppCompatActivity() {
         bottomBar.selectedItemId = R.id.home
     }
 
+    private fun askForPermission() {
+        ActivityCompat.requestPermissions(this, permissions, permissionCode)
+    }
+
     private fun inflateFragment(newInstance: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, newInstance)
         transaction.commit()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if(requestCode == permissionCode){
+            if(allpermissionGranted()){
+
+            }
+            else{
+                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun allpermissionGranted(): Boolean {
+        for(items in permissions){
+            if(ContextCompat.checkSelfPermission(this, items) != PackageManager.PERMISSION_GRANTED){
+                return false;
+            }
+            return true;
+        }
+
     }
 }

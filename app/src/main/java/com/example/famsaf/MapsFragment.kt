@@ -1,5 +1,6 @@
 package com.example.famsaf
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
 
+    @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.
@@ -26,6 +28,7 @@ class MapsFragment : Fragment() {
         val sydney = LatLng(19.0760, 72.8777)
         googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Mumbai"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        googleMap.isMyLocationEnabled = true
     }
 
     override fun onCreateView(
