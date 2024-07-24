@@ -38,7 +38,27 @@ class HomeFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = adapter
 
+        val listContacts = listOf<ContactModel>(
+            ContactModel("Rakesh Prasad", "123476733"),
+            ContactModel("Ashok Prasad", "4324353423"),
+            ContactModel("Sigma Singh", "9747313414"),
+            ContactModel("Rakesh Prasad", "123476733"),
+            ContactModel("Ashok Prasad", "4324353423"),
+            ContactModel("Sigma Singh", "9747313414"),
+            ContactModel("Rakesh Prasad", "123476733"),
+            ContactModel("Ashok Prasad", "4324353423"),
+            ContactModel("Sigma Singh", "9747313414"),
+            ContactModel("Rakesh Prasad", "123476733"),
+            ContactModel("Ashok Prasad", "4324353423"),
+            ContactModel("Sigma Singh", "9747313414")
+        )
+        val inviteAdapter = InviteAdapter(listContacts)
+        val invite_recycler = requireView().findViewById<RecyclerView>(R.id.recycler_invite)
+        invite_recycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        invite_recycler.adapter = inviteAdapter
     }
+
+
 
     companion object {
         fun newInstance() = HomeFragment()
